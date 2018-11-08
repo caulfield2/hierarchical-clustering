@@ -1,4 +1,7 @@
 .classpath
 .project
 .settings/
-bin/
+bin/ 
+.idea/
+Clustering.iml
+
