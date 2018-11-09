@@ -21,7 +21,7 @@ public class Distance {
 			
 			for (Cluster clusterA : clusterList) {
 				for(Cluster clusterB : clusterList) {
-					if (clusterA != clusterB) {
+					if (clusterA != clusterB && clusterA.isAmerican == clusterB.isAmerican) {
                         double maxDistanceBetweenClusters = 0;
 
                         for(City cityA : clusterA.cities) {
@@ -37,7 +37,7 @@ public class Distance {
 							}
 						}
 
-						// Update the current closest clusters 
+						// Update the current closest clusters
 						if (maxDistanceBetweenClusters < currMinDistance) {
                             currClosestClusters.clear();
                             currClosestClusters.add(clusterA);
