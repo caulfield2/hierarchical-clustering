@@ -37,6 +37,7 @@ public class Distance {
 							}
 						}
 
+						// Update the current closest clusters 
 						if (maxDistanceBetweenClusters < currMinDistance) {
                             currClosestClusters.clear();
                             currClosestClusters.add(clusterA);
