@@ -7,12 +7,12 @@ public class Distance {
 		int numClusters = 2;
 		
 		// Create a cluster for each city in the problem statement
-		clusterList.add(new Cluster(new City("Madison", -89, 43, true)));
-		clusterList.add(new Cluster(new City("Seattle", -122, 48, true)));
-		clusterList.add(new Cluster(new City("Boston", -71, 42, true)));
-		clusterList.add(new Cluster(new City("Vancouver", -123, 49, false)));
-		clusterList.add(new Cluster(new City("Winnipeg", -97, 50, false)));
-		clusterList.add(new Cluster (new City("Montreal", -74, 46, false)));
+		clusterList.add(new Cluster(new City("Madison", -89, 43), true));
+		clusterList.add(new Cluster(new City("Seattle", -122, 48), true));
+		clusterList.add(new Cluster(new City("Boston", -71, 42), true));
+		clusterList.add(new Cluster(new City("Vancouver", -123, 49), false));
+		clusterList.add(new Cluster(new City("Winnipeg", -97, 50), false));
+		clusterList.add(new Cluster (new City("Montreal", -74, 46), false));
 		
 		int iteration = 1;
 		while (clusterList.size() > numClusters) {
@@ -69,23 +69,23 @@ public class Distance {
 
 	public static class City {
 		String name;
-		boolean isAmerican;
 		double x;
 		double y;
 		
-		public City(String name, double x, double y, boolean isAmerican) {
+		public City(String name, double x, double y) {
 			this.name = name;
 			this.x = x;
 			this.y = y;
-			this.isAmerican = isAmerican;
 		}
 	}
 	
 	public static class Cluster {
 		List<City> cities;
+        boolean isAmerican;
 		
-		public Cluster(City city) {
+		public Cluster(City city, boolean isAmerican) {
 			this.cities = new ArrayList<>(Arrays.asList(city));
+            this.isAmerican = isAmerican;
 		}
 	}
 	
